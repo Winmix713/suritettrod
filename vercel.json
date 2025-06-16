@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "figma-to-react-converter",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "app/api/**/*.js": {
+      "maxDuration": 60
+    }
+  }
+}
